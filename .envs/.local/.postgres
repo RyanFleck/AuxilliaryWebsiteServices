@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres-rcf
+POSTGRES_PORT=5432
+POSTGRES_DB=services
+POSTGRES_USER=bpwZZwCHdcFoASKwsbBguAJeuwogtNia
+POSTGRES_PASSWORD=nItaNvDq85xKZJYdfeHj4ncgRbG0TfvTbzJim4UNhfaeLAAfOBqwHPsMcDqm8Nrg
