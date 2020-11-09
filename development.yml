@@ -1,0 +1,42 @@
+version: '3'
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: services_local_django
+    container_name: django-rcf
+    depends_on:
+      - postgres
+      - mailhog
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - "8000:8000"
+    command: /start
+
+  postgres:
+    container_name: postgres-rcf
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: services_production_postgres
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data:Z
+      - local_postgres_data_backups:/backups:z
+    env_file:
+      - ./.envs/.local/.postgres
+
+  mailhog:
+    container_name: mailhog-rcf
+    image: mailhog/mailhog:v1.0.0
+    ports:
+      - "8025:8025"
