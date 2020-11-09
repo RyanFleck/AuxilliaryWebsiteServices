@@ -165,6 +165,6 @@ sentry_sdk.init(
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-CORS_ALLOWED_ORIGINS = ["https://bellboy-capstone.netlify.app"]
+CORS_ALLOWED_ORIGINS = ["https://www.ryanfleck.ca", "https://ryanfleck.ca"]
 # TODO: Remove this in the future when security is an issue.
 CORS_ORIGIN_ALLOW_ALL = True
