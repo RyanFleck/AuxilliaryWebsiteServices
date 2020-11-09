@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2020-11-09)
+### Feature
+* Add view counting endpoint. ([`17cfa99`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/17cfa99d7f5f47450559668bc2d05303e21f1815))
+
+### Fix
+* Format files with black. ([`fe5723c`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/fe5723caeaa137a9518bdd301ed65d3f57e3ce0c))
+* Fix formatting errors. ([`fdbbd8c`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/fdbbd8c2b40c3d28bb259135d4f6abedba9ee39e))
+
 ## v0.3.3 (2020-11-09)
 ### Fix
 * Django-ify page URL. ([`2f30876`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/2f3087602774b48cf7c4fbe4fe687984a0194ec2))
