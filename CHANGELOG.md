@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.3 (2020-11-09)
+### Fix
+* Django-ify page URL. ([`2f30876`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/2f3087602774b48cf7c4fbe4fe687984a0194ec2))
+
 ## v0.3.2 (2020-11-09)
 ### Fix
 * Restrict CORS origins. ([`638d59d`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/638d59df938cd5f6f18df53acbb3ae6fbc54aff5))
