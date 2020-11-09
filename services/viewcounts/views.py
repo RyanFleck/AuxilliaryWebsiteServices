@@ -5,6 +5,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from services.viewcounts.serializers import PageViewSerializer
+from services.viewcounts.utils import get_page_views
 
 
 class PageTrackingView(GenericAPIView):
@@ -16,11 +17,16 @@ class PageTrackingView(GenericAPIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         data = serializer.validated_data
-        returned_data = {"status": "OK"}
-        # If no ID, send a new one:
+
+        # Begin creating returned data object.
+        returned_data = {"status": "OK, Thanks for reading! :)"}
+        # If no ID, add a new one to the object:
         if not data["user_id"]:
             # Temporarily generate a random user id.
             returned_data.update({"new_id": str(uuid.uuid4())})
+
+        views = get_page_views(data["page_url"])
+        returned_data.update({"page_views": views})
 
         return Response(returned_data)
 
