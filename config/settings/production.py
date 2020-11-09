@@ -166,4 +166,3 @@ sentry_sdk.init(
 # Your stuff...
 # ------------------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = ["https://www.ryanfleck.ca", "https://ryanfleck.ca"]
-# CORS_ORIGIN_ALLOW_ALL = True

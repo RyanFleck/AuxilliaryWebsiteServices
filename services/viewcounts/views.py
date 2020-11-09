@@ -1,3 +1,5 @@
+import uuid
+
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
@@ -14,7 +16,13 @@ class PageTrackingView(GenericAPIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         data = serializer.validated_data
-        return Response({"status": "POST OK", "data": data})
+        returned_data = {"status": "OK"}
+        # If no ID, send a new one:
+        if not data["user_id"]:
+            # Temporarily generate a random user id.
+            returned_data.update({"new_id": str(uuid.uuid4())})
+
+        return Response(returned_data)
 
 
 page_tracking_view = PageTrackingView.as_view()
