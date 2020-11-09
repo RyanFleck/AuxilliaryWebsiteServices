@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.2 (2020-11-09)
+### Fix
+* Restrict CORS origins. ([`638d59d`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/638d59df938cd5f6f18df53acbb3ae6fbc54aff5))
+
 ## v0.3.1 (2020-11-09)
 ### Fix
 * Test semver ([`3b1c349`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/3b1c349914c41de0457cb7a886e2e19c29595f75))
