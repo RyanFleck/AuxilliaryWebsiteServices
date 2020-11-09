@@ -21,6 +21,7 @@ urlpatterns = [
     path("users/", include("services.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("api/view-counts/", include("viewcounts.urls")),
     path(
         "favicon.ico",
         RedirectView.as_view(url="/static/images/favicons/favicon.ico", permanent=True),
