@@ -11,3 +11,7 @@ exclude_lines =
 ignore_errors = True
 omit =
     tests/*
+    docs/*
+    config/*
+    manage.py
+    merge_production_dotenvs_in_dotenv.py
