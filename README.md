@@ -7,9 +7,14 @@
 
 Support APIs deployed on Heroku, for the <https://ryanfleck.ca> static site deployed on Netlify.
 
-Code coverage icicle graph:
+Code coverage (% coverage) over time:
 
-[![Code coverage icicle graph.](https://codecov.io/gh/RyanFleck/AuxilliaryWebsiteServices/branch/master/graphs/icicle.svg)](https://codecov.io/gh/RyanFleck/AuxilliaryWebsiteServices)
+[![Code coverage commit graph](https://codecov.io/gh/RyanFleck/AuxilliaryWebsiteServices/branch/master/graphs/commits.svg
+)](https://codecov.io/gh/RyanFleck/AuxilliaryWebsiteServices)
+
+Code coverage icicle graph (green good, red bad!):
+
+[![Code coverage icicle graph](https://codecov.io/gh/RyanFleck/AuxilliaryWebsiteServices/branch/master/graphs/icicle.svg)](https://codecov.io/gh/RyanFleck/AuxilliaryWebsiteServices)
 
 <br />
 
