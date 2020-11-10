@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2020-11-10)
+### Feature
+* Add code coverage to repository. ([`b0e0d8b`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/b0e0d8bcb3c423de73ef515b007507d3f07a0aa5))
+
 ## v0.4.1 (2020-11-10)
 ### Fix
 * Use .coveragerc within docker CI ([`edc476e`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/edc476e1a3ea82ee2683c81b436f441df376320d))
