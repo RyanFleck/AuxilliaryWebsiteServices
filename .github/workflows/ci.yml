@@ -62,7 +62,9 @@ jobs:
         run:  docker-compose -f development.yml up -d
 
       - name: Run Django Tests
-        run:  docker-compose -f development.yml exec -e DATABASE_URL=${DATABASE_URL} -T django pytest --cov=./
+        run: |
+          docker-compose -f development.yml exec -e DATABASE_URL=${DATABASE_URL} -T django pytest --cov=./
+          docker-compose -f development.yml exec -e DATABASE_URL=${DATABASE_URL} -T coverage xml
 
       - name: Tear down the Stack
         run:  docker-compose -f development.yml down
