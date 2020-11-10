@@ -46,6 +46,7 @@ jobs:
     env:
       DATABASE_URL: "postgresql://bpwZZwCHdcFoASKwsbBguAJeuwogtNia:nItaNvDq85xKZJYdfeHj4ncgRbG0TfvTbzJim4UNhfaeLAAfOBqwHPsMcDqm8Nrg@postgres/services"
       USE_DOCKER: "yes"
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     steps:
 
@@ -61,10 +62,13 @@ jobs:
         run:  docker-compose -f development.yml up -d
 
       - name: Run Django Tests
-        run:  docker-compose -f development.yml exec -e DATABASE_URL=${DATABASE_URL} -T django pytest
+        run:  docker-compose -f development.yml exec -e DATABASE_URL=${DATABASE_URL} -T django pytest --cov=./
 
       - name: Tear down the Stack
         run:  docker-compose -f development.yml down
+
+      - name: Upload Coverage Report
+        run: bash <(curl -s https://codecov.io/bash)
 
   semver:
     runs-on: ubuntu-latest
