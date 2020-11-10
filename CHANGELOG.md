@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.1 (2020-11-10)
+### Fix
+* Use .coveragerc within docker CI ([`edc476e`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/edc476e1a3ea82ee2683c81b436f441df376320d))
+
+### Documentation
+* Update README with CI badges and TODOs. ([`3b8685c`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/3b8685c6fae854458e4a0815b8d56d2b08b97d7c))
+
 ## v0.4.0 (2020-11-09)
 ### Feature
 * Add view counting endpoint. ([`17cfa99`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/17cfa99d7f5f47450559668bc2d05303e21f1815))
