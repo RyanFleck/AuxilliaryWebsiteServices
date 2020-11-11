@@ -1,14 +1,37 @@
 import uuid
 
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.generics import GenericAPIView
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
+from rest_framework.throttling import AnonRateThrottle
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 
-from services.viewcounts.serializers import PageViewSerializer
+from services.viewcounts.models import PageViewsModel
+from services.viewcounts.serializers import PageViewSerializer, PageViewsModelSerializer
 from services.viewcounts.utils import get_page_views
 
 
+class PageViewsViewSet(ReadOnlyModelViewSet):
+    """Generic CRUD endpoints for BellboyDevice."""
+
+    serializer_class = PageViewsModelSerializer
+    authentication_classes = [TokenAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    queryset = PageViewsModel.objects.all()
+
+
+class PageViewsAdminViewSet(ModelViewSet):
+    """Generic CRUD endpoints for BellboyDevice."""
+
+    serializer_class = PageViewsModelSerializer
+    authentication_classes = [TokenAuthentication, SessionAuthentication]
+    permission_classes = [IsAdminUser]
+    queryset = PageViewsModel.objects.all()
+
+
 class PageTrackingView(GenericAPIView):
+    throttle_classes = [AnonRateThrottle]
     permission_classes = [AllowAny]
     serializer_class = PageViewSerializer
 

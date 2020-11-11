@@ -1,6 +1,19 @@
-from django.urls import path
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
-from services.viewcounts.views import page_tracking_view
+from services.viewcounts.views import (
+    PageViewsAdminViewSet,
+    PageViewsViewSet,
+    page_tracking_view,
+)
 
 app_name = "viewcounts"
-urlpatterns = [path("page-tracker/", page_tracking_view, name="page-tracker")]
+
+router = DefaultRouter()
+router.register(r"pages", PageViewsViewSet, basename="page-views")
+router.register(r"pages-admin", PageViewsAdminViewSet, basename="page-views-admin")
+
+urlpatterns = [
+    path("page-tracker/", page_tracking_view, name="page-tracker"),
+    path("", include(router.urls)),
+]
