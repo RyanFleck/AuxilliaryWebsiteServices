@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.1 (2020-11-10)
+### Fix
+* Omit config folders from coverage tests. ([`5a77b02`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/5a77b029315df1d9d9b5dc67630016c5f216efbc))
+
 ## v0.5.0 (2020-11-10)
 ### Feature
 * Add code coverage to repository. ([`b0e0d8b`](https://github.com/RyanFleck/AuxilliaryWebsiteServices/commit/b0e0d8bcb3c423de73ef515b007507d3f07a0aa5))
