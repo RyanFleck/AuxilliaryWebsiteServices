@@ -5,8 +5,17 @@ from services.viewcounts.models import PageViewsModel
 
 def get_page_views(url: str):
     """Returns the number of views for a given page object."""
+
+    # Pre-processing checks: Client should not pass full or partial URL.
+    if not url.startswith("/"):
+        raise Exception("Partial URL detected, only POST the page path.")
+    if ("http" in url) or ("localhost" in url):
+        raise Exception("Full URL detected, only POST the page path.")
+
+    # Boil down url to slug/path:
     path = url_to_path(url)
     print(f"User is at {path}")
+
     # Creates a new object if none exists.
     page, created = PageViewsModel.objects.get_or_create(path=path)
 
